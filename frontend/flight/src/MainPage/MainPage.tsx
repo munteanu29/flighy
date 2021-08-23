@@ -8,7 +8,7 @@ const MainPage = () => {
   const [selectedPage, setSelectedPage] = useState();
 
   return (
-    <div>
+    <div className="body">
       <div></div>
       <div>
         <Header setSelectedPage={setSelectedPage} />

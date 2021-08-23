@@ -1,5 +1,7 @@
 import { FC } from "react";
 import "./Header.css";
+import logo from "../Header/logo.png";
+
 
 export interface HeaderProps {
   setSelectedPage: any;
@@ -11,6 +13,7 @@ export const Header: FC<HeaderProps> = ({ setSelectedPage }) => {
   return (
     <div>
       <div className="col-md-4">
+        <img src={logo} className="logo"></img>
         <div className="mainButtons">
           <button
             className="mainButton"
