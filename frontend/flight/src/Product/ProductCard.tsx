@@ -1,22 +1,24 @@
 import { FC } from "react";
-import "./Card.css";
 
-export interface UserCardProps {
+import "../User/Card.css";
+export interface ProductCardProps {
   id: number;
+  price: number;
   avatar: string;
   description: string;
   category: string;
-  firstName: string;
-  lastName: string;
+  name: string;
+  artistId: number;
 }
 
-export const UserCard: FC<UserCardProps> = ({
+export const ProductCard: FC<ProductCardProps> = ({
   id,
+  price,
   avatar,
   description,
   category,
-  firstName,
-  lastName,
+  name,
+  artistId,
 }) => {
   return (
     <div className="container">
@@ -30,11 +32,10 @@ export const UserCard: FC<UserCardProps> = ({
         </div>
         <div className="card-body">
           <span className="tag tag-teal">{category}</span>
-          <h4>
-            {firstName} {lastName}
-          </h4>
+          <h4>{name}</h4>
           <p>{description}</p>
         </div>
+        <div className="price">Price: {price} RON</div>
       </div>
     </div>
   );

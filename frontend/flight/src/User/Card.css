@@ -80,3 +80,9 @@ body {
 .user-info small {
   color: #545d7a;
 }
+
+.price {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
