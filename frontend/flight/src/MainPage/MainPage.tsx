@@ -6,7 +6,7 @@ import { UserCard } from "../User/UserCard";
 class MainPage extends Component {
   render() {
     return (
-      <div>
+      <div className="body">
         <div></div>
         <div>
           <Header />
