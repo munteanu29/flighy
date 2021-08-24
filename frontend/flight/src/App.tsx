@@ -10,9 +10,9 @@ export default function App() {
     <>
       <Router>
         <Header setSelectedPage={setSelectedPage} />
-        <Route path="/artist" component={Dummy} />
+        <Route path="/artist/:id" component={Dummy} />
         <Route
-          path="/Main"
+          path="/MainPage"
           children={<MainPage selectedPage={selectedPage} />}
         />
       </Router>
