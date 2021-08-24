@@ -31,9 +31,14 @@ namespace itec_backend.Controllers
         [ProducesResponseType(typeof(NotFoundResult), 404)]
         public async Task<IActionResult> GetArtistInfo(string id)
         {
+            if (id == null)
+                return BadRequest("id null");
            
             var artistEntity = _artistEntity.Queryable.FirstOrDefault(t =>
                 String.Equals(t.Id, id, StringComparison.CurrentCultureIgnoreCase));
+            
+            if (artistEntity == null)
+                return BadRequest("artist not found");
             
             var response = new ArtistModel
             {
