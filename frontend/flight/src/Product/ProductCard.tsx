@@ -34,8 +34,8 @@ export const ProductCard: FC<ProductCardProps> = ({
         <span className="tag tag-teal">{category}</span>
         <h4>{name}</h4>
         <p>{description}</p>
+        <div className="price">Price: {price} RON</div>
       </div>
-      <div className="price">Price: {price} RON</div>
     </div>
     // </div>
   );

@@ -23,7 +23,7 @@ namespace flightBackend
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = "server=localhost;port=3306;database=flight;uid=root;password=parola01";
+            var connectionString = "server=https://adelin.ninja;port=3306;database=flight;uid=root;password=parola01";
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
