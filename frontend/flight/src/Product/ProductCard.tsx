@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
+import { useHistory } from "react-router-dom";
 import "../User/Card.css";
 export interface ProductCardProps {
   id: number;
@@ -20,14 +21,16 @@ export const ProductCard: FC<ProductCardProps> = ({
   name,
   artistId,
 }) => {
+  let history = useHistory();
+  const handleHistory = () => history.push(`/artist/${id}`);
   return (
     // <div className="container">
-    <div className="card">
+    <div className="card" onClick={handleHistory}>
       <div className="card-header">
         <img
           // src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg"
           src={avatar}
-          alt="rover"
+          alt={name}
         />
       </div>
       <div className="card-body">
@@ -37,6 +40,5 @@ export const ProductCard: FC<ProductCardProps> = ({
         <div className="price">Price: {price} RON</div>
       </div>
     </div>
-    // </div>
   );
 };

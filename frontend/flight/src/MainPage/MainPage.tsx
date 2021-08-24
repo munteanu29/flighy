@@ -1,20 +1,17 @@
 import Grid from "@material-ui/core/Grid";
-import React, { Component, useState } from "react";
-import { useEffect } from "react";
+import React, { Component, FC, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Header } from "../Header/Header";
 import "../MainPage/MainPage.css";
 import { ProductCard } from "../Product/ProductCard";
 import { ProductPage } from "../Product/ProductPage";
 import { UserPage } from "../User/UserPage";
-
-const MainPage = () => {
-  const [selectedPage, setSelectedPage] = useState(1);
-
+export interface MainPageProps {
+  selectedPage: number;
+}
+const MainPage: FC<MainPageProps> = ({ selectedPage }) => {
   return (
     <div className="body">
-      <div>
-        <Header setSelectedPage={setSelectedPage} />
-      </div>
       <div>{selectedPage == 1 && <UserPage />}</div>
       <div>{selectedPage == 2 && <ProductPage />}</div>
     </div>

@@ -1,13 +1,16 @@
 import { FC } from "react";
 import "./Header.css";
 import logo from "../Header/logo.png";
+import { useHistory } from "react-router-dom";
 
 export interface HeaderProps {
   setSelectedPage: any;
 }
 export const Header: FC<HeaderProps> = ({ setSelectedPage }) => {
+  const history = useHistory();
   const changePage = (id: any) => {
     setSelectedPage(id);
+    history.push("/Main");
   };
   return (
     <div>

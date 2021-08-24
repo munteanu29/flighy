@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./App";
 import "./index.css";
 import MainPage from "./MainPage/MainPage";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import { Dummy } from "./Dummy";
+import { Header } from "./Header/Header";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainPage />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
