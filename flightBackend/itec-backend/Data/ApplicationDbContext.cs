@@ -12,6 +12,7 @@ namespace itec_backend.Data
         }
 
         public DbSet<ArtistEntity> ArtistEntities { get; set; }
+        public DbSet<ArtworkEntity> ArtworkEntities { get; set; }
 
 
         public IRepository<T> GetRepository<T>() where T : Entity
