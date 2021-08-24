@@ -1,7 +1,10 @@
 import Grid from "@material-ui/core/Grid";
+import { useHistory } from "react-router-dom";
 import { ProductCard } from "./ProductCard";
 
 export const ProductPage = () => {
+  const history = useHistory();
+
   return (
     <Grid container spacing={3}>
       <Grid item sm={6} md={4}>

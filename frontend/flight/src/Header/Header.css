@@ -5,8 +5,8 @@
 
 .mainButton {
   margin-top: 50px;
-  width: 50%;
-  font-size: 20px;
+  width: 50vw;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   height: 40px;
@@ -14,6 +14,7 @@
   border: none;
   margin: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-family:cursive;
 }
 
 .mainButton:hover {
@@ -25,8 +26,6 @@
 .col-md-4 {
   background-color: white;
   /* height:100vh; */
-  margin-left: 20%;
-  margin-right: 20%;
   padding: 10px;
 }
 
