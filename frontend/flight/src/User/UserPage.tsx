@@ -8,7 +8,7 @@ export const UserPage = () => {
   const [artists, setArtists] = useState([]);
 
   useEffect(() => {
-    const artist = GetArtists();
+    console.log(GetArtists());
   }, []);
 
   return <div>Nothing here</div>;

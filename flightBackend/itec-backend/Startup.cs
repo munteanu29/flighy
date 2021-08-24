@@ -30,14 +30,12 @@ namespace itec_backend
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = "server=adelin.ninja;port=3306;database=flight;uid=root;password=parola01";
-            services.AddCors(options =>
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
-                    });
-            });
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -46,6 +44,7 @@ namespace itec_backend
             services.AddDbContext<ApplicationDbContext>(op => op.UseMySQL(connectionString,
                 x => x.MigrationsAssembly("itec-backend")));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,9 +66,8 @@ namespace itec_backend
                 c.RoutePrefix = string.Empty;
             });
 
-            app.UseHttpsRedirection();
             
-            app.UseCors();
+            app.UseCors("MyPolicy");
 
             app.UseRouting();
 
