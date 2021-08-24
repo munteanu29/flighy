@@ -10,7 +10,7 @@ export const Header: FC<HeaderProps> = ({ setSelectedPage }) => {
   const history = useHistory();
   const changePage = (id: any) => {
     setSelectedPage(id);
-    history.push("/Main");
+    history.push("/MainPage");
   };
   return (
     <div>
