@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using itec_backend.Data;
 using itec_backend.Entities;
 using itec_backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace itec_backend.Controllers
@@ -25,21 +26,47 @@ namespace itec_backend.Controllers
 
 
         [HttpGet("GetArtist")]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(IEnumerable<ArtistEntity>), 200)]
         [ProducesResponseType(typeof(NotFoundResult), 404)]
-        public async Task<IActionResult> GetCountryInfo(string name, string surname)
+        public async Task<IActionResult> GetArtistInfo(string id)
         {
            
-            var countryEntity = _artistEntity.Queryable.FirstOrDefault(t =>
-                String.Equals(t.Name, name, StringComparison.CurrentCultureIgnoreCase));
+            var artistEntity = _artistEntity.Queryable.FirstOrDefault(t =>
+                String.Equals(t.Id, id, StringComparison.CurrentCultureIgnoreCase));
             
             var response = new ArtistModel
             {
-                Name = countryEntity.Name,
-                Surname = countryEntity.Surname
+                Name = artistEntity.Name,
+                Surname = artistEntity.Surname,
+                Avatar = artistEntity.Avatar,
+                Category = artistEntity.Category,
+                Description = artistEntity.Description
             };
             return Ok(response);
         }
+        
+        [HttpGet("GetArtists")]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(IEnumerable<ArtistEntity>), 200)]
+        [ProducesResponseType(typeof(NotFoundResult), 404)]
+        public async Task<IActionResult> GetArtists()
+        {
+           
+          
+            var artists =  _artistEntity.Queryable.Where(t=>!String.IsNullOrEmpty(t.Name));
+            return Ok(artists);
+        }
+        
+        [HttpPost("AddArtists")]
+        public async Task<IActionResult> AddArtists([FromBody] ArtistModel artistModel)
+        {
+            var artist = new ArtistEntity(artistModel.Name, artistModel.Surname,artistModel.Category,artistModel.Avatar, artistModel.Description,  false, Guid.NewGuid().ToString());
+            await _artistEntity.AddAsync(artist);
+            return Ok();
+        }
+        
+        
 
      
     };
