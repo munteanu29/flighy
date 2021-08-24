@@ -2,13 +2,36 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Munteanu\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Munteanu\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_flightBackend.-1945495450.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Munteanu\RiderProjects\flightBackend" t="IncludeFlat">
+    <e p="C:\Users\Munteanu\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_flightBackend.894424688.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Munteanu\Documents\flight\flightBackend" t="IncludeFlat">
       <e p="flightBackend" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include" />
+        <e p="Data" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+          <e p="Repository.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="Entity.cs" t="Include" />
+        </e>
         <e p="flightBackend.csproj" t="IncludeRecursive" />
+        <e p="Migrations" t="Include">
+          <e p="20210327113326_firstMigration.cs" t="Include" />
+          <e p="20210327113326_firstMigration.Designer.cs" t="Include" />
+          <e p="20210327130951_add country.cs" t="Include" />
+          <e p="20210327130951_add country.Designer.cs" t="Include" />
+          <e p="20210327203957_removed enities .cs" t="Include" />
+          <e p="20210327203957_removed enities .Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="CountryModel.cs" t="Include" />
+          <e p="CovidVaccinRate.cs" t="Include" />
+          <e p="WeatherModel.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">

@@ -28,6 +28,48 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "EM.UsingSwagger": {
+          "target": "Package",
+          "version": "[1.0.8, )"
+        },
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[5.0.9, )"
+        },
+        "Microsoft.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[5.0.9, )"
+        },
+        "Microsoft.EntityFrameworkCore.Design": {
+          "target": "Package",
+          "version": "[5.0.9, )"
+        },
+        "Microsoft.EntityFrameworkCore.Relational.Design.Specification.Tests": {
+          "target": "Package",
+          "version": "[2.0.3, )"
+        },
+        "Microsoft.Extensions.DependencyInjection": {
+          "target": "Package",
+          "version": "[6.0.0-preview.7.21377.19, )"
+        },
+        "Microsoft.OpenApi": {
+          "target": "Package",
+          "version": "[1.3.0-preview, )"
+        },
+        "MySql.Data.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[8.0.22, )"
+        },
+        "MySql.Data.EntityFrameworkCore.Design": {
+          "target": "Package",
+          "version": "[8.0.19, )"
+        },
+        "Pomelo.EntityFrameworkCore.MySql": {
+          "target": "Package",
+          "version": "[5.0.1, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",
